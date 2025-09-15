@@ -1,5 +1,3 @@
-
-
 import 'dart:developer';
 
 import 'package:bilbank_admin_panel/data/apiService/api_constants.dart';
@@ -64,6 +62,8 @@ class LoginViewModel extends ChangeNotifier{
           await _localStorage.setValue<bool>(LocalStorageKeys.rememberCheck, true);
           await _localStorage.setValue<String>(LocalStorageKeys.rememberMeEmail, email);
           await _localStorage.setValue<String>(LocalStorageKeys.rememberMePassword, password);
+        } else {
+          await clearRememberMe();
         }
 
         return true;
@@ -92,10 +92,10 @@ class LoginViewModel extends ChangeNotifier{
   }
 
   Future<void> clearRememberMe() async {
-  _rememberMe = false;
-  await _localStorage.remove(LocalStorageKeys.rememberCheck);
-  await _localStorage.remove(LocalStorageKeys.rememberMeEmail);
-  await _localStorage.remove(LocalStorageKeys.rememberMePassword);
-  notifyListeners();
-}
+    _rememberMe = false;
+    await _localStorage.remove(LocalStorageKeys.rememberCheck);
+    await _localStorage.remove(LocalStorageKeys.rememberMeEmail);
+    await _localStorage.remove(LocalStorageKeys.rememberMePassword);
+    notifyListeners();
+  }
 }

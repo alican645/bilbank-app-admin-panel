@@ -23,9 +23,9 @@ import 'package:go_router/go_router.dart';
 final routerKey = GlobalKey<NavigatorState>();
 
 // GoRouter yapılandırması
-GoRouter router() => GoRouter(
+GoRouter router({String initialLocation = AppPageKeys.login}) => GoRouter(
   // Uygulama ilk açıldığında yönlendirilecek olan başlangıç rotası
-  initialLocation: AppPageKeys.login,
+  initialLocation: initialLocation,
 
   // Navigator anahtarı (bazı işlemler için dışarıdan erişim gerekir)
   navigatorKey: routerKey,

@@ -47,8 +47,6 @@ mixin LoginViewMixin on State<LoginScreen> {
     if (ok) {
       _toast('Giriş başarılı');
 
-      // TODO: Başarılı girişte hedef sayfaya yönlendir.
-      // Örnek (yorumlu bırakıyorum):
       context.go(AppPageKeys.roomHome);
 
     } else {
