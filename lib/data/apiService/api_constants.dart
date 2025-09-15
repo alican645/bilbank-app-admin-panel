@@ -9,7 +9,7 @@ class ApiConstants {
   static const String room = 'rooms';
   static const String roomPath = '$apiPath/$room/';
 
-
+  static const String adminUsersPath = '$apiPath/admin/users';
 
   static String getRoomActiveReservationsPath(String roomId) =>
       '$apiPath/rooms/getRoomActiveReservations?room_id=$roomId';
